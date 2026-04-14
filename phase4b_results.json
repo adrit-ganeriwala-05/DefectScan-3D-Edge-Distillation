@@ -1,0 +1,5 @@
+{
+  "model": "mobilenetv4_conv_small_int8_dynamic",
+  "accuracy": 99.62908011869436,
+  "macro_f1": 0.992169169120842
+}

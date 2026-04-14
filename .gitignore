@@ -1,0 +1,18 @@
+# Environments
+.venv/
+env/
+__pycache__/
+
+# Datasets (Do not upload thousands of images)
+dataset/
+dataset_raw/
+
+# Model Weights
+# (Optional: You can remove *.pth if you want to upload your tiny 2.9MB INT8 model, 
+# but we should definitely ignore the massive Teacher models)
+*.pth
+outputs/models/
+
+# OS generated files
+.DS_Store
+Thumbs.db
