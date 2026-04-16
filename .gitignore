@@ -1,18 +1,50 @@
-# Environments
+# =============================================================================
+#  DefectScan AI — .gitignore
+# =============================================================================
+
+# ── Virtual environment ───────────────────────────────────────────────────────
 .venv/
+venv/
 env/
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# Datasets (Do not upload thousands of images)
+# ── Dataset (too large for git — see README for download instructions) ────────
 dataset/
 dataset_raw/
 
-# Model Weights
-# (Optional: You can remove *.pth if you want to upload your tiny 2.9MB INT8 model, 
-# but we should definitely ignore the massive Teacher models)
+# ── Model weights (large binary files) ───────────────────────────────────────
 *.pth
+# Exception: you MAY commit the tiny INT8 model if you want (2.91 MB)
+# To do so, comment out the line above and uncomment:
+# !outputs/models/student_int8.pth
+
+# ── Output artefacts ──────────────────────────────────────────────────────────
+# Keep the figures folder tracked (PNGs are useful for README/report)
+# but ignore model weights inside outputs/
 outputs/models/
 
-# OS generated files
+# ── IDE and OS files ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Logs and temp ────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+wandb/
+
+# ── Build artefacts ───────────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
