@@ -1,5 +1,5 @@
 # =============================================================================
-#  DefectScan AI — .gitignore
+#  DefectScan AI — UPDATED .gitignore
 # =============================================================================
 
 # ── Virtual environment ───────────────────────────────────────────────────────
@@ -15,16 +15,20 @@ __pycache__/
 dataset/
 dataset_raw/
 
-# ── Model weights (large binary files) ───────────────────────────────────────
+# ── Model weights ───────────────────────────────────────────────────────────
+# Ignore all .pth files by default to prevent accidental large uploads
 *.pth
-# Exception: you MAY commit the tiny INT8 model if you want (2.91 MB)
-# To do so, comment out the line above and uncomment:
-# !outputs/models/student_int8.pth
+
+# EXCEPTIONS: Allow the optimized student models for deployment (under 100MB)
+!outputs/models/student_int8.pth
+!outputs/models/student_fp32_best.pth
 
 # ── Output artefacts ──────────────────────────────────────────────────────────
-# Keep the figures folder tracked (PNGs are useful for README/report)
-# but ignore model weights inside outputs/
-outputs/models/
+# We ignore the models folder specifically but allow the figures for the README
+outputs/models/*
+# Re-allow the specific files we want within that ignored folder
+!outputs/models/student_int8.pth
+!outputs/models/student_fp32_best.pth
 
 # ── IDE and OS files ──────────────────────────────────────────────────────────
 .vscode/
