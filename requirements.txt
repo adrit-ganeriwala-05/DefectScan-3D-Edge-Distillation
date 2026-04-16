@@ -1,29 +1,9 @@
-# =============================================================================
-#  DefectScan AI — Requirements
-#  Install: pip install -r requirements.txt
-#
-#  For GPU training (CUDA 12.1), install PyTorch separately first:
-#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-#
-#  Then install the rest:
-#    pip install -r requirements.txt
-# =============================================================================
-
-# ── Core ML ───────────────────────────────────────────────────────────────────
-timm>=1.0.3
-scikit-learn>=1.5.0
-
-# ── Data / Numerics ───────────────────────────────────────────────────────────
-numpy>=1.26.0
-Pillow>=10.4.0
-
-# ── Visualisation ─────────────────────────────────────────────────────────────
-matplotlib>=3.9.0
-seaborn>=0.13.0
-
-# ── Dashboard ─────────────────────────────────────────────────────────────────
-streamlit>=1.38.0
-
-# ── Utilities ─────────────────────────────────────────────────────────────────
-tqdm>=4.66.0
-requests>=2.31.0
+streamlit>=1.30.0
+opencv-python-headless
+torch
+torchvision
+timm
+pillow
+numpy>=1.24.0
+roboflow
+python-dotenv
